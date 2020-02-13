@@ -1,11 +1,21 @@
 import unittest
 
 
-class FizzBuzzTest(uniitest.TestCase):
-    def test_divisisble_by_3_should_return_fizz(self):
+class FizzBuzzTest(unittest.TestCase):
+    def test_divisible_by_3_returns_fizz(self):
         fizzbuzz = FizzBuzz()
         result = fizzbuzz.take(3)
-        self.assertEqual(result, 3)
+        self.assertEqual(result, "fizz")
+
+    def test_divisible_by_5_returns_buzz(self):
+        fizzbuzz = FizzBuzz()
+        result = fizzbuzz.take(5)
+        self.assertEqual(result, "buzz")
+
+    def test_not_divisible_by_3_or_5_returns_number(self):
+        fizzbuzz = FizzBuzz()
+        result = fizzbuzz.take(4)
+        self.assertEqual(result, 4)
 
 
 class FizzBuzz:
